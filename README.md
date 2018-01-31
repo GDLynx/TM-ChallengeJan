@@ -1,2 +1,6 @@
 # TM-ChallengeJan
-# TraversyMedia Challenge Landing Page ## &lt;Your Discord Username> ## &lt;List of external files used (Libraries, assets etc.)>
+# TraversyMedia Challenge Contact Form
+## TheLynx 
+
+## List of assets 
+Materialize's "Material Icons" 
