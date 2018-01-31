@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+        .form {
+            padding-left: 33%;
+            padding-right: 33%;
+        }
+        input {
+            display: block;
+        }
+        </style>
+    </head>
+    <body>
+
+        <!-- Icons:
+        telephone-icon: "call"
+        email-icon: "email"
+        plus-sign: "add"
+        upload-photo: "add_a_photo"
+        -->
+        <form>
+            <div id="photo-goes-here"><img src=""/></div>
+            <b>Not enough input fields?
+                <br />No problem: press the "+" to add a new input field
+            </b>
+            <div class="form">
+                <input class="photo"
+                    type="file"><i class="large material-icons">add_a_photo</i>
+                <input class ="phone"
+                    type="phone"><i class="large material-icons">call</i>
+                <button class="add-phone">
+                    <i class="large material-icons">add</i>
+                </button>
+                <input class="email"
+                    type="email"><i class="large material-icons">email</i>
+                <button class="add-email">
+                    <i class="large material-icons">add</i>
+                </button>
+                <button class="clear-input-fields" onclick="clear();">Clear input fields?</button>
+            </div>
+        </form>
+        <script type="text/javascript">
+        window.onload = function() {
+            var form = document.getElementsByClassName("form")[0],
+                photo = document.getElementsByClassName("photo")[0],
+                photo_goes_here = document.getElementById("photo-goes-here"),
+                phone = document.getElementsByClassName("phone")[0],
+                email = document.getElementsByClassName("email")[0],
+                add_phone = document.getElementsByClassName("add-phone")[0],
+                add_email = document.getElementsByClassName("add-phone")[0];
+                document.addEventListener("click", function() {
+                    var img = document.getElementsByTagName("img").item(0).src= "'"+photo.value+"'"; // bug here
+                    console.log(photo.value);
+                });
+
+                var note;
+                if (phone.value == "" && email.value == "") {
+                    note = form.innerHTML += "<h1 id='note'>Must insert email & phone</h1>";
+                } else { 
+                    note.remove(document.getElementById("note"));
+                }
+        }
+
+        function new_phone() {
+
+        }
+        function new_email() {
+            form.innerHTML += "<input class='email' type='email'><i class='large material-icons'>email</i>";
+        }
+
+        function clear() {
+            phone.value = "";
+            email.value = "";
+        }
+        </script>
+        <noscript>This page will be funner with Javascript</noscript>
+    </body>
+</html>
+
+<!-- Specifications
+@everyone Hello fellow programmers!
+
+The Challenge (Courtesy of NartC)
+
+Are you ready for the next challenge? Our second challenge will be something, as a Web Developer, that you need to or want to get really familiar with. That is Building Forms. For this challenge, you are going to build a Customer Information Form. The requirements are as follow:
+---
+1. The Form needs to have basic information such as: First Name, Last Name, Date of Birth, Gender
+2. The Form will also need to collect Customer's contact information such as: Phone Numbers, Addresses, Emails
+    - Customer will have the ability to dynamically add new input field(s) for Phone Numbers, Addresses and Emails if they desire to provide more than one.
+    - However, Customer will need to enter at least one for each of the three fields: Phone Numbers, Addresses, Emails.
+3. The Form will need to have proper validations.
+4. Bonus: The Form can have Save and Submit button. Hitting Save will persist the data on page refresh. Hitting Submit will pop a modal/dialog with all the entered Data in JSON format.
+
+Example: https://goo.gl/fw1jyG(edited)
+👍9
+🙌2
+---
+General Rules
+:
+1. You're permitted to use CSS libraries and Animation libraries so yes, Bootstrap, Bulma, Materialize and others are all allowed...
+2. You are permitted to use any images and assets you fiind, just make sure to link the source unless they're royalty free. Nothing is being monetized so I'm not too fussed.
+3. You cannot rip existing templates off and make a few tweaks here and there, anyone found doing so will be disqualified immediately and banned from entering any future competition. Remember that this is a fun community contest, cheating and plagiarism will only hurt you and your experience within this community.
+4. This week's challenge is simple enough so I will insist that seeing your work should be as simple as opening an HTML file, no pre-processing or compiling needed on our end, otherwise we will spend forever compiling and checking all the submisions.
+5. Submissions will be in the form of public Github Repositories with a README file formatted in the following way:
+# TraversyMedia Challenge Landing Page
+## <Your Discord Username>
+## <List of external files used (Libraries, assets etc.)>
+
+6. Once you have everything ready in your GitHub repo, private message me the link to the repo.
+💯12
+👌5
+❤1
+Deadline is 31st of January 11PM GMT
+-->
